@@ -1,0 +1,8 @@
+openai-whisper           # Speech-to-text transcription
+sounddevice              # Microphone recording
+sentence-transformers    # Sentence embeddings for text matching
+PySimpleGUI              # GUI to show and highlight slide text
+scikit-learn             # Cosine similarity + ML tools
+numpy                    # Numerical operations and vector math
+torch                    # Required backend for ML models
+pyannote.audio           # Speaker recognition (priest vs audience)
