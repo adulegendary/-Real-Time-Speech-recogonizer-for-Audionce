@@ -16,4 +16,4 @@ def record(filename, duration=5):
     sf.write(filename, audio, fs)
     print("✅ Recording saved to:", filename)
     
-record("data/voices/deacon.wav", duration=5)
+record("data/sample_voices/deacon.wav", duration=5)

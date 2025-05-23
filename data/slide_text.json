@@ -1,4 +1,5 @@
-[priest] በመጀመሪያ እንደ ቃል ነበረ።
-[deacon] እግዚአብሔር ሰማይን ፈጠረ።
-[audience] ምድርንም ፈጠረ።
-[priest] እርሱ ሁሉን በቃሉ አደረገ።
+[
+  {"role": "priest", "text": "በመጀመሪያ..."},
+  {"role": "deacon", "text": "እግዚአብሔር..."},
+  {"role": "audience", "text": "ምድርንም..."}
+]

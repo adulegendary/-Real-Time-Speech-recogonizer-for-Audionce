@@ -1,14 +1,19 @@
-from resemblyzer import VoiceEncoder, preprocess_wav
+# Load saved embedding
+priest_embedding = np.load("data/embeddings/priest.npy")
 
-encoder = VoiceEncoder()
+# Record a new sample
+from record_audio import record
+record("temp.wav", duration=3)
 
-# Load pre-recorded samples
-def get_reference_embeddings():
-    roles = ["priest", "deacon", "audience"]
-    embeddings = {}
-    for role in roles:
-        wav = preprocess_wav(f"data/voices/{role}.wav")
-        embeddings[role] = encoder.embed_utterance(wav)
-    return embeddings
+# Embed new voice
+test_wav = preprocess_wav("temp.wav")
+test_embedding = encoder.embed_utterance(test_wav)
 
-reference_embeddings = get_reference_embeddings()
+# Compare similarity
+similarity = np.dot(priest_embedding, test_embedding)
+print("🔍 Similarity score:", similarity)
+
+if similarity > 0.75:
+    print(" Speaker is likely the priest")
+else:
+    print(" Not the priest")
